@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import JournalTable from './JournalTable';
-import request from '../services/request';
+import Request from '../Services/Request';
 
-//пример данных
+/*
 const students = [
   [
     { name: 'Иванов Иван Иванович', markPrIS: 5, markSII: 4 },
@@ -19,6 +19,7 @@ const students = [
     { name: 'Сёмина Анна Николаевна', markPrIS: 3, markSII: 5 }
   ]
 ];
+*/
 
 class App extends Component {
   constructor() {
@@ -30,15 +31,17 @@ class App extends Component {
   }
 
   componentDidMount() {
-    request.getStudents().then((students) => {
-        this.setState({students: students});
+    Request.getStudents().then((students) => {
+      this.setState({ students: students });
     });
-}
+  }
 
   render() {
     return (
       <div className='App'>
-        {this.state.students ? <JournalTable students={this.state.students[this.state.activeGroup]}/> : null}
+        {this.state.students ? (
+          <JournalTable students={this.state.students[this.state.activeGroup]} />
+        ) : null}
         <button
           onClick={() => {
             this.setState({ activeGroup: 0 });
