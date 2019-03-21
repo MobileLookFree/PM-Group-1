@@ -1,6 +1,6 @@
 const Request = {
     getStudents() {
-    	return fetch("/getStudents").then(res => res.json);
+    	return fetch("http://localhost:8080/mark/1").then(res => res.json);
     }
 };
 
