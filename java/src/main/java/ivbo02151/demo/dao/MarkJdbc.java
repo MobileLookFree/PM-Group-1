@@ -1,11 +1,10 @@
 package ivbo02151.demo.dao;
 
-        import ivbo02151.demo.model.mark;
+        import ivbo02151.demo.model.Mark;
         import org.springframework.jdbc.core.JdbcTemplate;
         import org.springframework.stereotype.Repository;
         import java.sql.ResultSet;
         import java.sql.SQLException;
-
 
 @Repository
 public class MarkJdbc {
@@ -15,12 +14,12 @@ public class MarkJdbc {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public mark get (int id) {
+    public Mark get (int id) {
         return jdbcTemplate.queryForObject("SELECT * FROM mark WHERE id = ?", this::mapMark, id);
     }
 
-    private mark mapMark (ResultSet rs, int i) throws SQLException {
-        mark mark = new mark (
+    private Mark mapMark (ResultSet rs, int i) throws SQLException {
+        Mark mark = new Mark(
                 rs.getInt( "id"),
         rs.getString( "name"),
         rs.getString( "value")
@@ -28,7 +27,7 @@ public class MarkJdbc {
 
         return mark;
     }
-    public mark search (String mark) {
-        return jdbcTemplate.queryForObject("SELECT * FROM mark WHERE name = ?", mark.class, mark);
+    public Mark search (String mark) {
+        return jdbcTemplate.queryForObject("SELECT * FROM mark WHERE name = ?", Mark.class, mark);
     }
 }
