@@ -30,7 +30,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    Request.getStudents().then((students) => {
+    request.getStudents().then((students) => {
         this.setState({students: students});
     });
 }
