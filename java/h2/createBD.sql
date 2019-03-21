@@ -1,4 +1,4 @@
-CREATE TABLE study_group(
+CREATE TABLE studyGroup(
                           id int NOT NULL PRIMARY KEY,
                           name text NOT NULL
 );
@@ -13,7 +13,7 @@ CREATE TABLE student(
 );
 
 ALTER TABLE student ADD CONSTRAINT FK_student_study_group FOREIGN KEY(study_group_id)
-  REFERENCES study_group (id);
+  REFERENCES studyGroup (id);
 
 
 CREATE TABLE subject(
