@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import JournalTable from './JournalTable';
-import Request from '../Services/Request';
+import Request from '../Services/request';
 
 
 // const students = [
