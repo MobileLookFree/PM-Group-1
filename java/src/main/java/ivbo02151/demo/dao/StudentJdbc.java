@@ -38,7 +38,7 @@ public class StudentJdbc {
     }
 
     public int add(int id, String surname, String name, String second_name, String study_group_id) {
-        return  jdbcTemplate.update("INSERT INTO STUDENT VALUES (?,  ?, ?, ?, ? )", id, surname, name, second_name, study_group_id);
+        return  jdbcTemplate.update("INSERT INTO STUDENT VALUES (?, ?, ?, ?, ? )", id, surname, name, second_name, study_group_id);
     }
 
     public int delete(int id) {
