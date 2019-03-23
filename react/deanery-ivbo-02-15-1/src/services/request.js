@@ -1,6 +1,6 @@
 const Request = {
     getStudents() {
-    	return fetch("http://localhost:8080/students").then(res => res.json);
+    	return fetch("http://up-lab2.mirea.ru/student/all").then(res => res.json);
     }
 };
 

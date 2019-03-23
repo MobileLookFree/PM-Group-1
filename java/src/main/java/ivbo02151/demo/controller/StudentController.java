@@ -30,6 +30,11 @@ public class StudentController {
         return studentJdbc.getAll();
     }
 
+    @GetMapping("/studentsLocal")
+    public List<Student> getStudentsLocal() {
+        return studentJdbc.getAllLocal();
+    }
+
     @GetMapping("/students/group={group}")
     public List<Student> getStudentsByGroup(@PathVariable String group) {
         return studentJdbc.getByGroup(group);

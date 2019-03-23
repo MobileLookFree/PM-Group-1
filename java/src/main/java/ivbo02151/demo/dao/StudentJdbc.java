@@ -24,6 +24,10 @@ public class StudentJdbc {
         return jdbcTemplate.queryForObject("SELECT * FROM STUDENT WHERE surname = ?", this::mapStudent, surname);
     }
 
+    public List<Student> getAllLocal() {
+        return jdbcTemplate.query("SELECT * FROM student_local", this::mapStudent);
+    }
+
     public List<Student> getAll() {
         return jdbcTemplate.query("SELECT * FROM student", this::mapStudent);
     }
