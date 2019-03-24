@@ -25,7 +25,6 @@ CREATE TABLE student_local(
 ALTER TABLE student ADD CONSTRAINT FK_student_study_group FOREIGN KEY(study_group_id)
   REFERENCES study_group (id);
 
-
 CREATE TABLE subject(
                       id int NOT NULL PRIMARY KEY,
                       name text NOT NULL,
