@@ -75,7 +75,7 @@ ALTER TABLE journal ADD CONSTRAINT FK_journal_study_plan FOREIGN KEY(study_plan_
   REFERENCES study_plan(id);
 
 
-insert into STUDENT_LOCAL (ID, SURNAME, NAME, SECOND_NAME, study_group_id)
+/*insert into STUDENT_LOCAL (ID, SURNAME, NAME, SECOND_NAME, study_group_id)
 VALUES(1, 'Алешин', 'Илья', 'Константинович', 1),
       (2, 'Борзых', 'Никита', 'Юрьевич', 1),
       (3,'Воронцов', 'Юрий', 'Алексеевич', 1),
@@ -90,7 +90,7 @@ VALUES(1, 'Алешин', 'Илья', 'Константинович', 1),
       (12, 'Паперно', 'Виктор', 'Александрович', 1),
       (13, 'Прохоров', 'Андрей', 'Валерьевич', 1),
       (14, 'Сергеев', 'Юрий', 'Дмитриевич', 1),
-      (15, 'Штендер', 'Владислав', 'Андреевич', 1);
+      (15, 'Штендер', 'Владислав', 'Андреевич', 1);*/
 
 insert into SUBJECT (ID, NAME, SHORT_NAME)
 VALUES(1, 'Проектирование информационных систем', 'ПрИС'),
