@@ -42,7 +42,7 @@ public class StudentController {
 
     @GetMapping("/student/add/id={id}&surname={surname}&name={name}&second_name={second_name}&study_group={study_group}")
     public int addStudent(@PathVariable int id, @PathVariable String surname, @PathVariable String name,
-                          @PathVariable String second_name, @PathVariable String study_group
+                          @PathVariable String second_name, @PathVariable int study_group
     ) {
         return studentJdbc.add(id, surname, name, second_name, study_group);
     }

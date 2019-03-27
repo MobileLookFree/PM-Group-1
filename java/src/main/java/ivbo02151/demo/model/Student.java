@@ -6,14 +6,14 @@ public class Student {
     private String surname;
     private String name;
     private String second_name;
-    private int studyGroup;
+    private int study_group_id;
 
     public Student(int id, String surname, String name, String second_name, int studyGroup) {
         this.id = id;
         this.surname = surname;
         this.name = name;
         this.second_name = second_name;
-        this.studyGroup = studyGroup;
+        this.study_group_id = studyGroup;
     }
 
     public int getId() {
@@ -32,8 +32,8 @@ public class Student {
         return second_name;
     }
 
-    public int getStudyGroup() {
-        return studyGroup;
+    public int getStudy_group_id() {
+        return study_group_id;
     }
 
     public void setId(int id) {
@@ -52,7 +52,7 @@ public class Student {
         this.second_name = second_name;
     }
 
-    public void setStudyGroup(int studyGroup) {
-        this.studyGroup = studyGroup;
+    public void setStudy_group_id(int study_group_id) {
+        this.study_group_id = study_group_id;
     }
 }

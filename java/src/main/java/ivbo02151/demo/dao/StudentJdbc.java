@@ -33,11 +33,11 @@ public class StudentJdbc {
     }
 
     public List<Student> getByGroup(String group) {
-        return jdbcTemplate.query("SELECT student.* FROM student INNER JOIN study_group ON student.study_group_id = study_group.id WHERE study_group.name = ?",
+        return jdbcTemplate.query("SELECT student.* FROM student INNER JOIN study_group ON student.STUDY_GROUP_ID = study_group.id WHERE study_group.name = ?",
                 this::mapStudent, group);
     }
 
-    public int add(int id, String surname, String name, String second_name, String study_group_id) {
+    public int add(int id, String surname, String name, String second_name, int study_group_id) {
         return  jdbcTemplate.update("INSERT INTO STUDENT VALUES (?, ?, ?, ?, ? )", id, surname, name, second_name, study_group_id);
     }
 
