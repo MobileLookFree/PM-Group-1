@@ -2,10 +2,13 @@ package ivbo02151.demo.controller;
 
     import ivbo02151.demo.model.StudyGroup;
     import ivbo02151.demo.dao.StudyGroupJdbc;
+    import org.springframework.web.bind.annotation.CrossOrigin;
     import org.springframework.web.bind.annotation.GetMapping;
     import org.springframework.web.bind.annotation.PathVariable;
     import org.springframework.web.bind.annotation.RestController;
     import java.util.List;
+
+@CrossOrigin("http://localhost:3000")
 
 @RestController
 public class StudyGroupController {

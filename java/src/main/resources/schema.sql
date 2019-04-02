@@ -74,9 +74,8 @@ ALTER TABLE journal ADD CONSTRAINT FK_journal_student FOREIGN KEY(student_id)
 ALTER TABLE journal ADD CONSTRAINT FK_journal_study_plan FOREIGN KEY(study_plan_id)
   REFERENCES study_plan(id);
 
-
 insert into study_group (ID, NAME)
-VALUES (1, 'ИВБО-02-15-1');
+VALUES(1, 'ИВБО-02-15-1');
 
 insert into STUDENT_LOCAL (ID, SURNAME, NAME, SECOND_NAME, study_group_id)
 VALUES(1, 'Алешин', 'Илья', 'Константинович', 1),

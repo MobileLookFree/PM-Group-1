@@ -1,30 +1,56 @@
 import React, { Component } from 'react';
-import { Table} from 'react-bootstrap';
+import { Table } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.css';
+import DropDownMenu from './Dropdown';
+import request from '../services/request';
 
 class JournalTable extends Component {
-    render() {
-        return <Table bordered>
-            <thead>
-            <tr>
-                <th>#</th>
-                <th>ФИО</th>
-                <th>ПрИС</th>
-                <th>СИИ</th>
-            </tr>
-            </thead>
-            <tbody>
-            {this.props.students.map((student, index) => {
-                return <tr>
-                    <td>{index + 1}</td>
-                    <td>{student.name}</td>
-                    <td>{student.markPrIS}</td>
-                    <td>{student.markSII}</td>
-                </tr>
-            })}
-            </tbody>
+    constructor() {
+        super();
+        this.state = {
+          activeGroup: 0,
+          groups: null
+        };
+      }
 
-        </Table>
-    }
+      componentDidMount() {
+    
+        request.getGroups().then((groups) => {
+          this.setState({ groups: groups });
+        });
+      }
+
+  render() {
+    return (
+      <Table bordered>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Фамилия</th>
+            <th>Имя</th>
+            <th>Отчетсво</th>
+            <th>Группа</th>
+          </tr>
+        </thead>
+        <tbody>
+          {this.props.students.map((student) => {
+            return (
+              <tr>
+                <td>{student.id}</td>
+                <td>{student.surname}</td>
+                <td>{student.name}</td>
+                <td>{student.second_name}</td>
+                <td>
+                {/*<DropDownMenu groups={this.props.groups} studentId={student.id} />*/}
+                  {student.study_group_id}
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </Table>
+    );
+  }
 }
 
 export default JournalTable;
